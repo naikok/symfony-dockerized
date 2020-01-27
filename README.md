@@ -1,4 +1,4 @@
-equirements:
+Requirements:
 
 For this project I have decided to use symfony 5 framework under php 7.2 + nginx + mysql
 
@@ -6,27 +6,26 @@ Installation:
 
 Make sure you have docker installed at your computer
 
-1) Clone the symfony-dockerized repository from 
+1) First of all, clone this repository from https://github.com/naikok/symfony-dockerized.git
 
-2) Once is done, get into the symfony-dockerized folder and remove the folder symfony (here goes the project). After that clone the repository symfony and you will see a new folder symfony created.
+2) Once is done, get into the symfony-dockerized folder that has been already created and remove the folder symfony (here goes the project). After that, (within the symfony-dockerized folder) clone the repository symfony app project from https://github.com/naikok/symfony and you will see a new folder symfony created.
 
-3) Wake up docker! You will see a file run.sh within the symfony-dockerized folder
+3) Wake up docker! You will see a file run.sh within the symfony-dockerized folder. Execute it via command line.
 
-    Execute the bash code for waking up all docker containers and execute as root:
-
-4) sudo sh run.sh (Wake up all required containers to make it work)
+  Execute the bash code for waking up all docker containers and execute as root: sudo sh run.sh
+  (Wake up all required containers to make it work)
 
 4) Once is finished, get access to the symfony container php. In order to to do this:
    Execute sudo sh sudo docker exec -it symfonydockerized_php_1 /bin/bash
     
 After that you will see a new bash shell under the path /var/www/symfony.
 
-5) Run composer to install required dependencies composer install
+5) Run composer to install required dependencies with the command line: composer install
 
-5) In that new shell you must execute a command line to create doctrine database. 
+5) Once is finished , in that shell you must execute a command line to create doctrine database. 
    php bin/console doctrine:database:create
    
-6) Execute doctrine migration
+6) Execute doctrine migration in order to create the tables required as database system.
 
    php bin/console doctrine:migrations:migrate 20201227105444
 
