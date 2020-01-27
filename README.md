@@ -14,11 +14,11 @@ Make sure you have docker installed at your computer
   (Wake up all required containers to make it work)
 
 4) Once is finished, get access to the symfony container php. In order to to do this:
-   Execute sudo sh sudo docker exec -it symfonydockerized_php_1 /bin/bash
+   Execute sudo sh accesscontainer.sh 
     
-After that you will see a new bash shell under the path /var/www/symfony.
+After that you will see a new shell bash under the path /var/www/symfony. You are working within the container.
 
-5) Run composer to install required dependencies with the command line: composer install
+5) Run composer to install required dependencies in this new shell: composer install
 
 5) Once is finished , in that shell you must execute a command line to create doctrine database. 
    php bin/console doctrine:database:create
