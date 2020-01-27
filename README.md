@@ -8,11 +8,9 @@ Make sure you have docker installed at your computer
 
 1) First of all, clone this repository from https://github.com/naikok/symfony-dockerized.git
 
-2) Once is done, get into the symfony-dockerized folder that has been already created and remove the folder symfony (here goes the project). After that, (within the symfony-dockerized folder) clone the repository symfony app project from https://github.com/naikok/symfony and you will see a new folder symfony created.
+2) Once is done, get into the symfony-dockerized folder that has been already created and remove the folder symfony that comes with the repo (here goes the project). After that, (within the symfony-dockerized folder) clone the repository project from https://github.com/naikok/symfony and you will see a new folder symfony created with all its files.
 
-3) Wake up docker! You will see a file run.sh within the symfony-dockerized folder. Execute it via command line.
-
-  Execute the bash code for waking up all docker containers and execute as root: sudo sh run.sh
+3) Wake up docker! You will see a file called "run.sh" within the symfony-dockerized folder. Execute the bash code for waking   up all docker containers and execute as root: sudo sh run.sh
   (Wake up all required containers to make it work)
 
 4) Once is finished, get access to the symfony container php. In order to to do this:
