@@ -20,14 +20,18 @@ After that you will see a new shell bash under the path /var/www/symfony. You ar
 
 5) Run composer to install required dependencies in this new shell: composer install
 
-5) Once is finished , in that shell you must execute a command line to create doctrine database. 
+6) Once is installed configure tyour database, edit file .env (located at /var/www/symfony/.env ) and change DATABASE_URL as it follows:
+
+  DATABASE_URL=mysql://root:root@database:3306/symfony_db?serverVersion=5.7
+
+7) Once is finished , in that shell you must execute a command line to create doctrine database. 
    php bin/console doctrine:database:create
    
-6) Execute doctrine migration in order to create the tables required as database system.
+8) Execute doctrine migration in order to create the tables required as database system.
 
    php bin/console doctrine:migrations:migrate 20201227105444
 
-7) Open a browser and go to http://127.0.0.1:8001 and you will be able to see the symfony app running!
+9) Open a browser and go to http://127.0.0.1:8001 and you will be able to see the symfony app running!
 
 
 
