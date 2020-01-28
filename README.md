@@ -24,8 +24,9 @@ After that you will see a new shell bash under the path /var/www/symfony. You ar
 
   DATABASE_URL=mysql://root:root@database:3306/symfony_db?serverVersion=5.7
 
-7) Once is finished , in that shell you must execute a command line to create doctrine database. 
-   php bin/console doctrine:database:create, if already exists, just get rid of this step.
+7) Once is finished , in that shell you must execute a command line to create database.
+
+   php bin/console doctrine:database:create (if already exists, just get rid of this step).
    
 8) Execute doctrine migration in order to create the tables required as database system.
 
