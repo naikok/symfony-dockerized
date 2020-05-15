@@ -31,8 +31,12 @@ After that you will see a new shell bash under the path /var/www/symfony. You ar
 8) Execute doctrine migration in order to create the tables required as database system.
 
    php bin/console doctrine:migrations:migrate 20200514202426
+    
+9) Load activities as examples to fill the mysql database with random activities.
 
-9) Open a browser and go to http://127.0.0.1:8001 and you will be able to see the symfony app running!
+    php bin/console doctrine:fixtures:load 
+
+10) Open a browser and go to http://127.0.0.1:8001 and you will be able to see the symfony app running!
 
 
 
