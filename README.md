@@ -20,7 +20,7 @@ After that you will see a new shell bash under the path /var/www/symfony. You ar
 
 5) Run composer to install required dependencies in this new shell: composer install
 
-6) Once is installed is time to configure your database, please edit the file .env (located at /var/www/symfony/.env ) and change DATABASE_URL as it follows:
+6) Once is installed is time to configure your database, please edit the file .env (located at /var/www/symfony/.env ) and change DATABASE_URL as it follows, although it should be okay from the repo:
 
   DATABASE_URL=mysql://root:root@database:3306/symfony_test?serverVersion=5.7
 
