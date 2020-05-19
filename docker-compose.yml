@@ -1,38 +1,35 @@
 version: '3'
 
 services:
-    redis:
-        container_name: container_redis
-        image: redis:alpine
-        ports:
-            - "6379:6379"
     nginx:
         container_name: container_nginx
         build:
             context: .
             dockerfile: Dockerfile-nginx
         volumes:
-            - ./symfony/:/var/www/symfony/
+            - ./symfonytest/:/var/www/symfony/
         ports:
             - 8001:80
         networks:
-            - symfony
+            - symfonytest
     php:
         build:
             context: .
             dockerfile: Dockerfile-php
         environment:
             APP_ENV: dev
-            DATABASE_URL: mysql://root:root@mysql:3306/symfony_db?serverVersion=5.7
+            DATABASE_URL: mysql://root:root@mysql:3306/symfony_test?serverVersion=5.7
         volumes:
-            - ./symfony/:/var/www/symfony/
+            - ./symfonytest/:/var/www/symfony/
         networks:
-            - symfony
+            - symfonytest
         depends_on:
             - mysql
     mysql:
         container_name: container_mysql
         image: mysql
+        cap_add:
+          - SYS_NICE
         command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
         environment:
             MYSQL_ROOT_PASSWORD: root
@@ -41,7 +38,7 @@ services:
         volumes:
             - ./mysql:/var/lib/mysql
         networks:
-            - symfony
+            - symfonytest
 networks:
-    symfony:
+    symfonytest:
 
